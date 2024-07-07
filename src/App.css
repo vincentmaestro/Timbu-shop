@@ -1,0 +1,438 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+}
+
+nav .menu {
+  background-color: #D19C75;
+  color: #F6F6F6;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 24px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ECECEC;
+  padding: 2% 5%;
+}
+
+nav .left {
+  width: 24%;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav .left a {
+  color: #D19C75;
+  font-size: 18px;
+}
+
+nav .logo a {
+  color: #9E6236;
+}
+
+nav .right {
+  width: 18%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .right i {
+  color: #D19C75;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+nav .right .signup {
+  color: #ECECEC;
+  background-color: #D19C75;
+  font-size: 18px;
+  padding: 4px 16px;
+  border-radius: 6px;
+}
+
+.shop-heading {
+  margin-top: 6%;
+  text-align: center;
+  color: #9E6236;
+}
+
+.shop-sections {
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 4%;
+}
+
+.shop-links a {
+  /* background-color: #D19C75; */
+  border: 1.8px solid #D19C75;
+  padding: 3px 10px;
+  border-radius: 6px;
+  color: #D19C75;
+}
+
+.shop {
+  margin-top: 7%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 6%;
+  row-gap: 30px;
+}
+
+.card {
+  width: 25%;
+  background: linear-gradient(#959595, #F6F6F6);
+  padding: 1% 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px #959595;
+}
+
+.card-image {
+  height: 300px;
+  padding: 0 8%;
+  margin-bottom: 12px;
+}
+
+.card-image img {
+  height: 100%;
+}
+
+.product-name {
+  margin-left: 2%;
+  margin-bottom: 8px;
+}
+
+.sizes {
+  margin-left: 2%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 4%;
+}
+
+.s, .m, .l, .xl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background-color: #F6F6F6;
+  color: #959595;
+  cursor: pointer;
+}
+
+.price {
+  margin-left: 4%;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.amount-and-add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4%;
+}
+
+.amount {
+  width: 28%;
+  padding: 1px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.8px solid #D19C75;
+  border-radius: 6px;
+}
+
+.amount .increment, .amount .decrement {
+  cursor: pointer;
+}
+
+.amount input {
+  height: 24px;
+  width: 50%;
+  border: none;
+  outline: none;
+  text-align: center;
+  background-color: transparent;
+}
+
+.btn {
+  background-color: #D19C75;
+  color: #ECECEC;
+  cursor: pointer;
+  padding: 6px 20px;
+  border-radius: 6px;
+}
+
+.more-items {
+  margin: 12% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3%;
+}
+
+.previous-page, .next-page {
+  border: 1.8px solid #D19C75;
+  padding: 6px 16px;
+  border-radius: 6px;
+}
+
+.page-1, .page-2, .page-3, .page-4 {
+  border: 1.8px solid #D19C75;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+.more-items a {
+  font-size: 18px;
+  color: #444;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 6%;
+  background-color: #D19C75;
+  row-gap: 30px;
+}
+
+footer .left {
+  width: 25%;
+}
+
+footer .left h1 {
+  margin-bottom: 10px;
+}
+
+footer .left a {
+  color: #ECECEC;
+}
+
+footer .left p {
+  color: #ddd;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+footer .social-media-icons {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer .social-media-icons i {
+  font-size: 26px;
+  color: #333;
+}
+
+.shop-with-us h3 {
+  color: #ddd;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.shop-with-us li {
+  margin-bottom: 14px;
+}
+
+.shop-with-us a {
+  color: #ddd;
+}
+
+.privacy-policy h3 {
+  color: #ddd;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.privacy-policy li {
+  margin-bottom: 14px;
+}
+
+.privacy-policy a {
+  color: #ddd;
+}
+
+.contact-us h3 {
+  color: #ddd;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.contact-us li {
+  margin-bottom: 14px;
+  color: #ddd;
+}
+
+@media screen and (max-width: 1200px) {
+  nav {
+    padding: 2% 4%;
+  }
+
+  nav .left {
+    width: 28%;
+  }
+
+  nav .right {
+    width: 22%;
+  }
+
+  .shop {
+    column-gap: 4%;
+  }
+
+  .card {
+    width: 28%;
+  }
+
+  footer {
+    padding: 2% 5%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .left {
+    width: 30%;
+  }
+
+  nav .right {
+    width: 24%;
+  }
+
+  .shop-sections {
+    margin-top: 3%;
+  }
+
+  .shop {
+    column-gap: 3%;
+  }
+
+  .card {
+    width: 30%;
+  }
+
+  .card-image {
+    height: 240px;
+  }
+
+  footer {
+    padding: 2% 4%;
+  }
+
+  footer .left {
+    width: 30%;
+  }
+
+  footer .left p {
+    font-size: 17px;
+  }
+
+  footer .social-media-icons {
+    width: 50%;
+  }
+
+  .shop-with-us a, .privacy-policy a, .contact-us li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .amount-and-add .amount {
+    width: 32%;
+  }
+
+  .amount-and-add .btn {
+    padding: 6px 12px;
+  }
+
+  footer {
+    padding: 2%;
+  }
+
+  footer .left {
+    width: 28%;
+  }
+
+  footer .left .social-media-icons {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  nav {
+    padding: 4% 6%;
+  }
+
+  nav .menu {
+    display: block;
+  }
+
+  nav .left {
+    display: none;
+  }
+
+  nav .right {
+    width: 14%;
+  }
+
+  nav .right .signup {
+    display: none;
+  }
+
+  .shop {
+    column-gap: 10%;
+  }
+
+  .shop .card {
+    width: 40%;
+  }
+
+  footer {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 10%;
+    padding: 6% 2%;
+  }
+
+  footer .left .social-media-icons {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+  footer .left, footer .shop-with-us, footer .privacy-policy, footer .contact-us {
+    width: 40%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .shop {
+    column-gap: 4%;
+  }
+
+  .shop .card {
+    width: 45%;
+  }
+}

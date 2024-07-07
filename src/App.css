@@ -10,6 +10,12 @@ img {
   width: 100%;
 }
 
+nav .left .active-link {
+  color: #9E6236;
+  font-size: 20px;
+  font-weight: 700;
+}
+
 nav .menu {
   background-color: #D19C75;
   color: #F6F6F6;
@@ -32,6 +38,7 @@ nav .left {
   width: 24%;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 
 nav .left a {
@@ -39,8 +46,9 @@ nav .left a {
   font-size: 18px;
 }
 
-nav .logo a {
+nav .logo {
   color: #9E6236;
+  user-select: none;
 }
 
 nav .right {
@@ -62,6 +70,14 @@ nav .right .signup {
   font-size: 18px;
   padding: 4px 16px;
   border-radius: 6px;
+}
+
+.Home {
+  margin: 8%;
+}
+
+.Home h1 {
+  text-align: center;
 }
 
 .shop-heading {

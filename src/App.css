@@ -10,6 +10,14 @@ img {
   width: 100%;
 }
 
+ nav .menu-open {
+  top: 100%;
+}
+
+ nav .menu-closed {
+  top: -200%;
+}
+
 nav .left .active-link {
   color: #9E6236;
   font-size: 20px;
@@ -32,6 +40,8 @@ nav {
   align-items: center;
   background-color: #ECECEC;
   padding: 2% 5%;
+  position: relative;
+  z-index: 1;
 }
 
 nav .left {
@@ -39,6 +49,8 @@ nav .left {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 0;
+  transition: top ease-in-out .5s;
 }
 
 nav .left a {
@@ -89,17 +101,22 @@ nav .right .signup {
 .shop-sections {
   margin-top: 2%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   column-gap: 4%;
 }
 
 .shop-links a {
-  /* background-color: #D19C75; */
   border: 1.8px solid #D19C75;
   padding: 3px 10px;
   border-radius: 6px;
   color: #D19C75;
+}
+
+.shop-sections li:nth-child(2) a {
+  color: #ECECEC;
+  background-color: #D19C75;
 }
 
 .shop {
@@ -202,9 +219,11 @@ nav .right .signup {
 .more-items {
   margin: 12% 0;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   column-gap: 3%;
+  row-gap: 20px;
 }
 
 .previous-page, .next-page {
@@ -239,10 +258,8 @@ footer .left {
 
 footer .left h1 {
   margin-bottom: 10px;
-}
-
-footer .left a {
   color: #ECECEC;
+  user-select: none;
 }
 
 footer .left p {
@@ -406,7 +423,21 @@ footer .social-media-icons i {
   }
 
   nav .left {
-    display: none;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    display: block;
+    padding-top: 12px;
+    background-color: #ECECEC;
+  }
+
+  nav .left li {
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  nav .left a {
+    font-size: 20px;
   }
 
   nav .right {
@@ -444,11 +475,72 @@ footer .social-media-icons i {
 }
 
 @media screen and (max-width: 576px) {
+  nav .right {
+    width: 16%;
+  }
+
   .shop {
     column-gap: 4%;
   }
 
   .shop .card {
     width: 45%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  nav .right {
+    width: 18%;
+  }
+
+  .shop .card {
+    width: 70%;
+    padding: 2% 0;
+  }
+
+  footer {
+    padding: 6% 0;
+    column-gap: 5%;
+  }
+
+  footer .left, footer .shop-with-us, footer .privacy-policy, footer .contact-us {
+    width: 45%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .shop-heading {
+    margin-top: 10%;
+  }
+
+  .shop-sections {
+    margin-top: 5%;
+  }
+
+  .shop {
+    margin-top: 12%;
+  }
+
+  .shop .card {
+    width: 78%;
+  }
+
+  footer {
+    flex-direction: column;
+    row-gap: 25px;
+  }
+
+  footer .left, footer .shop-with-us, footer .privacy-policy, footer .contact-us {
+    width: 85%;
+    text-align: center;
+  }
+
+  footer .left .social-media-icons {
+    width: 50%;
+  }
+
+  .shop-with-us li, .privacy-policy li, .contact-us li {
+    margin-bottom: 12px;
   }
 }

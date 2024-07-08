@@ -105,6 +105,7 @@ nav .right .signup {
   align-items: center;
   justify-content: center;
   column-gap: 4%;
+  row-gap: 25px;
 }
 
 .shop-links a {
@@ -170,6 +171,16 @@ nav .right .signup {
   background-color: #F6F6F6;
   color: #959595;
   cursor: pointer;
+}
+
+.s:active, .m:active, .l:active, .xl:active {
+  background-color: #D19C75;
+  color: #ECECEC;
+}
+
+.s:hover, .m:hover, .l:hover, .xl:hover {
+  background-color: #D19C75;
+  color: #ECECEC;
 }
 
 .price {
@@ -523,7 +534,7 @@ footer .social-media-icons i {
   }
 
   .shop .card {
-    width: 78%;
+    width: 80%;
   }
 
   footer {

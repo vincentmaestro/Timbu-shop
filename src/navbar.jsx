@@ -36,13 +36,14 @@ function Navbar () {
                 <li><Link to="/" onClick={e => goHome(e)}>Home</Link></li>
                 <li><Link to="/" onClick={e => styleNavLink(e)}>About us</Link></li>
                 <li><Link to="/shop" onClick={e => styleNavLink(e)}>Shop</Link></li>
+                <li><Link className="signup-m">Sign up</Link></li>
             </ul>
 
             <h1 className="logo">Timbushop</h1>
             
             <div className="right">
                 <i className="ri-search-line"></i>
-                <i className="ri-shopping-cart-2-line"></i>
+                <Link to="cart"><i className="ri-shopping-cart-2-line"></i></Link>
                 <Link to="/" className="signup">Sign up</Link>
             </div>
         </nav>

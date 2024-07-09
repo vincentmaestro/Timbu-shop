@@ -45,13 +45,13 @@ function Cart() {
                     </div>
                     <div className="cart-item">
                         <div className="cart-item-image">
-                            <img src="./9.png" alt="SHEIN: Roupas Feminas gown" />
+                            <img src="./9.png" alt="SAFEIRODO: Long sleeve gown" />
                         </div>
                         <div className="description">
                             <div className="top">
                                 <div className="left">
-                                    <h3 className="product-name">SHEIN: Roupas Feminas gown</h3>
-                                    <span>Blue gown</span>
+                                    <h3 className="product-name">SAFEIRODO: Long sleeve gown</h3>
+                                    <span>Emerald Green</span>
                                 </div>
                                 <span className="price">$39.99</span>
                             </div>
@@ -79,13 +79,13 @@ function Cart() {
                     </div>
                     <div className="cart-item">
                         <div className="cart-item-image">
-                            <img src="./2.png" alt="SHEIN: Roupas Feminas gown" />
+                            <img src="./2.png" alt="SAFEIRODO: Long sleeve gown" />
                         </div>
                         <div className="description">
                             <div className="top">
                                 <div className="left">
-                                    <h3 className="product-name">SHEIN: Roupas Feminas gown</h3>
-                                    <span>Blue gown</span>
+                                    <h3 className="product-name">SAFEIRODO: Long sleeve gown</h3>
+                                    <span>Wine color gown</span>
                                 </div>
                                 <span className="price">$39.99</span>
                             </div>

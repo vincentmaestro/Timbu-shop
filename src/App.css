@@ -298,6 +298,7 @@ nav .left .signup-m {
   align-items: flex-start;
   justify-content: space-between;
   padding: 0 6%;
+  margin-bottom: 10%;
 }
 
 .checkout .left {
@@ -310,6 +311,7 @@ nav .left .signup-m {
 
 .checkout .left .name {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-top: 6%;
 }
@@ -353,6 +355,7 @@ nav .left .signup-m {
 
 .checkout .left .tcp {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin-bottom: 6%;
 }
@@ -391,8 +394,7 @@ nav .left .signup-m {
 }
 
 .checkout .order-summary .payment-method .dbt::marker {
-  font-size: 24px;
-  font-weight: 500;
+  font-size: 22px;
 }
 
 .checkout .order-summary .payment-method small {
@@ -428,6 +430,7 @@ nav .left .signup-m {
   margin: 0 auto;
   text-align: center;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .shop-heading {
@@ -727,6 +730,10 @@ footer .social-media-icons i {
     padding: 0 2%;
   }
 
+  .checkout .left {
+    width: 60%;
+  }
+
   .bottom .qty {
     width: 60%;
   }
@@ -810,6 +817,21 @@ footer .social-media-icons i {
     width: 92%;
     margin: 6% auto 8%;
     font-size: 18px;
+  }
+
+  .checkout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkout .left {
+    width: 90%;
+    overflow: auto;
+  }
+
+  .checkout .order-summary {
+    width: 90%;
+    padding: 2%;
   }
 
   .amount-and-add .amount {
@@ -896,6 +918,10 @@ footer .social-media-icons i {
     width: 70%;
   }
 
+  .checkout .left input {
+    padding: 10px 0;
+  }
+
   .shop {
     column-gap: 4%;
   }
@@ -962,6 +988,10 @@ footer .social-media-icons i {
     width: 85%;
   }
 
+  .checkout .left .name, .checkout .left .tcp {
+    row-gap: 16px;
+  }
+
   .card-image {
     padding: 0;
   }
@@ -1007,6 +1037,14 @@ footer .social-media-icons i {
     width: 85%;
   }
 
+  .order-summary .ptc {
+    width: 75%;
+  }
+
+  .checkout .order-summary .payment-method .dbt {
+    margin-left: 6%;
+  }
+
   .shop .card {
     width: 70%;
     padding: 2% 0;
@@ -1028,6 +1066,10 @@ footer .social-media-icons i {
   footer .left, footer .shop-with-us, footer .privacy-policy, footer .contact-us {
     width: 45%;
     text-align: center;
+  }
+
+  .shop-with-us a, .privacy-policy a, .contact-us li {
+    font-size: 16px;
   }
 }
 

@@ -128,7 +128,7 @@ function Cart() {
                             <span>$170.45</span>
                         </div>
                     </div>
-                    <Link to="checkout" className="ptc">Proceed to checkout</Link>
+                    <Link to="/checkout" className="ptc">Proceed to checkout</Link>
                     <div className="coupon-code">
                         <h3 className="cc">Coupon code</h3>
                         <input type="text" placeholder="Enter coupon code" />

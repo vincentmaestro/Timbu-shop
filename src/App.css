@@ -227,6 +227,15 @@ nav .left .signup-m {
   border-radius: 6px;
 }
 
+.product-page {
+  display: flex;
+  justify-content: center;
+}
+
+.product-page .card {
+  margin: 6% 0;
+}
+
 .order-summary {
   background-color: #a7a7a754;
   border: 1px solid #D19C75;

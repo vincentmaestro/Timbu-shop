@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+const apiKey = '10b65569a3ad47d39af619d1ac5ba22d20240713194837290303';
+const appID = 'XIPQ1HG0E1Y6FTH';
+const orgID = '26e222830a814f56b09ab4f854f8e86a';
+
 function Shop() {
+    const [products, setProducts] = useState([]);
     const [amount, setAmount] = useState(1);
+
+    useEffect(() => {
+        fetch(`https://timbu-get-all-products.reavdev.workers.dev?organization_id=${orgID}&reverse_sort=false&page=1&size=10&Appid=${appID}&Apikey=${apiKey}`)
+            .then(response => response.json())
+            .then(products => setProducts(products.items))
+            .catch(err => console.error(err.message));
+    }, []);
+
     return (
         <>
             <h1 className="shop-heading">Shop with us here</h1>
@@ -12,7 +25,33 @@ function Shop() {
                 <li className="shop-links"><Link>Offer Deals</Link></li>
             </ul>
             <div className="shop">
-                <div className="card">
+                {
+                    products && 
+                        products.map((product, position) => (
+                            <Link to={`/product/${product.id}`} className="card" key={position}>
+                                <div className="card-image">
+                                    <img src="" alt="SHEIN: Roupas Feminas gown" />
+                                </div>
+                                <h3 className="product-name">{product.name}</h3>
+                                <ul className="sizes">
+                                    <li className="s">S</li>
+                                    <li className="m">M</li>
+                                    <li className="l">L</li>
+                                    <li className="xl">XL</li>
+                                </ul>
+                                <p className="price">NGN {product.current_price[0].NGN[0]}</p>
+                                <div className="amount-and-add">
+                                    <div className="amount">
+                                        <i className="ri-subtract-line decrement"></i>
+                                        <input type="number" min="1" value={amount} onChange={e => setAmount(e.target.value)}/>
+                                        <i className="ri-add-line increment"></i>
+                                    </div>
+                                    <p className="btn">Add to cart</p>
+                                </div>
+                            </Link>
+                        ))
+                }
+                {/* <div className="card">
                     <div className="card-image">
                         <img src="./1.png" alt="SHEIN: Roupas Feminas gown" />
                     </div>
@@ -199,7 +238,7 @@ function Shop() {
                         </div>
                         <p className="btn">Add to cart</p>
                     </div>
-                </div>
+                </div> */}
             </div>
             <ul className="more-items">
                 <li className="previous-page"><Link>Previous</Link></li>

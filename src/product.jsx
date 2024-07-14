@@ -22,7 +22,7 @@ function Product() {
                 product && 
                     <div className="card">
                         <div className="card-image">
-                            <img src="./1.png" alt="SHEIN: Roupas Feminas gown" />
+                            { product.photos && <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt={product.name} /> }
                         </div>
                         <h3 className="product-name">{product.name}</h3>
                         <ul className="sizes">

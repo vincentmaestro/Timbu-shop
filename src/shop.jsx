@@ -30,7 +30,7 @@ function Shop() {
                         products.map((product, position) => (
                             <Link to={`/product/${product.id}`} className="card" key={position}>
                                 <div className="card-image">
-                                    <img src="" alt="SHEIN: Roupas Feminas gown" />
+                                    <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt={product.name} />
                                 </div>
                                 <h3 className="product-name">{product.name}</h3>
                                 <ul className="sizes">

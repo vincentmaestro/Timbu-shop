@@ -19,12 +19,6 @@ img {
   top: -300%;
 }
 
-nav .left .active-link {
-  color: #9E6236;
-  font-size: 20px;
-  font-weight: 700;
-}
-
 nav .menu {
   background-color: #D19C75;
   color: #F6F6F6;
@@ -95,19 +89,25 @@ nav .left .signup-m {
   display: none;
 }
 
-.Home {
-  margin: 8%;
+.prompt {
+  margin: 8% 0;
 }
 
-.Home h1 {
+.prompt h1 {
   text-align: center;
+}
+
+.cart-empty {
+  color: #333;
+  text-align: center;
+  margin: 4% 0 8%;
 }
 
 .cart-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 7% 4%;
+  padding: 4%;
 }
 
 .cart-heading h2 {
@@ -132,6 +132,7 @@ nav .left .signup-m {
   align-items: flex-start;
   justify-content: center;
   column-gap: 5%;
+  margin-bottom: 4%;
 }
 
 .cart-items {
@@ -225,6 +226,12 @@ nav .left .signup-m {
   padding: 4px 8px;
   border: 1px solid #D19C75;
   border-radius: 6px;
+  transition: background-color ease-in .2s;
+}
+
+.remove:hover {
+  background-color: #D19C75;
+  color: #ECECEC;
 }
 
 .product-page {
@@ -248,6 +255,7 @@ nav .left .signup-m {
   text-align: center;
   font-weight: 500;
   margin-bottom: 7%;
+  position: relative;
 }
 
 .summary .st, .summary .sf, .summary .ta {
@@ -271,6 +279,41 @@ nav .left .signup-m {
   font-size: 18px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.order-completed {
+  position: fixed;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  background-color: #D19C75;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  padding: 6% 0;
+}
+
+.order-completed h2 {
+  margin-bottom: 4%;
+  color: #333;
+}
+
+.order-completed .mid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #eee;
+  margin-bottom: 4%;
+}
+
+.order-completed button {
+  margin-top: 4%;
+  background-color: #eee;
+  border: #D19C75;
+  cursor: pointer;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 1.1rem;
 }
 
 .coupon-code .cc {
@@ -298,8 +341,10 @@ nav .left .signup-m {
 }
 
 .checkout-heading {
-  margin-left: 6%;
-  padding: 4% 0;
+  display: inline-block;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin: 4% 0 4% 6%;
 }
 
 .checkout {
@@ -481,7 +526,7 @@ nav .left .signup-m {
 }
 
 .card {
-  width: 25%;
+  width: 23%;
   background: linear-gradient(#959595, #F6F6F6);
   padding: 1% 0;
   border-radius: 10px;
@@ -489,7 +534,7 @@ nav .left .signup-m {
 }
 
 .card-image {
-  height: 300px;
+  height: 260px;
   padding: 0 8%;
   margin-bottom: 12px;
 }
@@ -500,9 +545,15 @@ nav .left .signup-m {
 
 .product-name {
   margin-left: 2%;
-  margin-bottom: 8px;
+  margin-bottom: 2px;
   color: #333;
   font-weight: 500;
+}
+
+.product-design {
+  display: block;
+  margin-left: 2%;
+  margin-bottom: 6px;
 }
 
 .sizes {
@@ -573,10 +624,16 @@ nav .left .signup-m {
 
 .btn {
   background-color: #D19C75;
+  border: none;
   color: #ECECEC;
   cursor: pointer;
-  padding: 6px 20px;
+  padding: 7px 20px;
   border-radius: 6px;
+}
+
+.btn:active {
+  transform: scale(.9);
+  box-shadow: inset 0 -2px 0 3px #a06e4a;
 }
 
 .more-items {
@@ -729,6 +786,10 @@ footer .social-media-icons i {
 
   .order-summary {
     width: 32%;
+  }
+
+  .order-completed {
+    width: 60%;
   }
 
   .checkout .order-summary {
@@ -927,6 +988,10 @@ footer .social-media-icons i {
     width: 70%;
   }
 
+  .order-completed {
+    width: 75%;
+  }
+
   .checkout .left input {
     padding: 10px 0;
   }
@@ -1052,6 +1117,10 @@ footer .social-media-icons i {
 
   .checkout .order-summary .payment-method .dbt {
     margin-left: 6%;
+  }
+
+  .order-completed {
+    width: 85%;
   }
 
   .shop .card {

@@ -1,7 +1,7 @@
-import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
 import Navbar from './navbar'
-import Home from './home'
+import Prompt from './prompt'
 import Shop from './shop'
 import Product from './product'
 import Cart from './cart'
@@ -14,10 +14,10 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Prompt message='Welcome to TimbuShop' />} />
         <Route path='shop' element={<Shop />} />
-        <Route path='cart' element={<Cart />} />
         <Route path='product/:productID' element={<Product />} />
+        <Route path='cart' element={<Cart />} />
         <Route path='checkout' element={<Checkout />} />
       </Routes>
       <Footer />

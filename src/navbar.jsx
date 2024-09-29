@@ -1,30 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 function Navbar () {
+    function styleNav({ isActive }) {
+        return {
+            color: isActive ? '#9E6236' : 'normal',
+            fontSize: isActive ? '20px' : 'normal',
+            fontWeight: isActive ? 700 : 'normal',
+        }
+    }
 
     function toggleMenu() {
         if(document.querySelector('nav').querySelector('.left').classList.contains('menu-closed')) {
             document.querySelector('nav').querySelector('.left').classList.remove('menu-closed');
             document.querySelector('nav').querySelector('.left').classList.add('menu-open');
         }
-        
+
         else if(document.querySelector('nav').querySelector('.left').classList.contains('menu-open')) {
             document.querySelector('nav').querySelector('.left').classList.remove('menu-open');
             document.querySelector('nav').querySelector('.left').classList.add('menu-closed');
         }
     }
 
-    function goHome(e) {
-        e.target.parentElement.parentElement.childNodes.forEach(node => {
-            node.firstChild.classList.remove('active-link');
-        });
-        document.querySelector('nav').querySelector('.left').classList.add('menu-closed');
-    }
-
-    function styleNavLink(e) {
-        e.target.parentElement.parentElement.childNodes.forEach(node => {
-            node.firstChild.classList.remove('active-link');
-        });
-        e.target.classList.add('active-link');
+    function closeNav() {
         document.querySelector('nav').querySelector('.left').classList.add('menu-closed');
     }
 
@@ -33,10 +29,10 @@ function Navbar () {
             <i className="ri-menu-line menu" onClick={() => toggleMenu()}></i>
 
             <ul className="left menu-closed">
-                <li><Link to="/" onClick={e => goHome(e)}>Home</Link></li>
-                <li><Link to="/" onClick={e => styleNavLink(e)}>About us</Link></li>
-                <li><Link to="/shop" onClick={e => styleNavLink(e)}>Shop</Link></li>
-                <li><Link className="signup-m">Sign up</Link></li>
+                <li><NavLink to="/" style={styleNav} onClick={closeNav}>Home</NavLink></li>
+                <li><Link onClick={closeNav}>About us</Link></li>
+                <li><NavLink to="shop" style={styleNav} onClick={closeNav}>Shop</NavLink></li>
+                <li><Link className="signup-m" onClick={closeNav}>Sign up</Link></li>
             </ul>
 
             <h1 className="logo">Timbushop</h1>
@@ -44,7 +40,7 @@ function Navbar () {
             <div className="right">
                 <i className="ri-search-line"></i>
                 <Link to="cart"><i className="ri-shopping-cart-2-line"></i></Link>
-                <Link to="/" className="signup">Sign up</Link>
+                <Link className="signup">Sign up</Link>
             </div>
         </nav>
     );

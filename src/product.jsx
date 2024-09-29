@@ -1,46 +1,46 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
-const apiKey = '10b65569a3ad47d39af619d1ac5ba22d20240713194837290303';
-const appID = 'XIPQ1HG0E1Y6FTH';
-const orgID = '26e222830a814f56b09ab4f854f8e86a';
+import AddToCart from "./addToCart";
+import Prompt from "./prompt";
 
 function Product() {
-    const { productID }= useParams();
-    const [product, setProduct] = useState([]);
+    const { productID } = useParams();
+    const [product, setProduct] = useState();
 
     useEffect(() => {
-        fetch(`https://timbu-get-single-product.reavdev.workers.dev/${productID}?organization_id=${orgID}&reverse_sort=false&page=1&size=10&Appid=${appID}&Apikey=${apiKey}`)
-        .then(response => response.json())
-        .then(product => setProduct(product))
-        .catch(err => console.error(err.message));
+        fetch(`http://localhost:3000/api/wears/${productID}`)
+            .then(response => response.json())
+            .then(product => setProduct(product))
+            .catch(err => console.error(err.message));
     }, []);
 
     return (
         <div className="product-page">
             {
-                product && 
+                product ?
                     <div className="card">
                         <div className="card-image">
-                            { product.photos && <img src={`https://api.timbu.cloud/images/${product.photos[0].url}`} alt={product.name} /> }
+                            <img src={`http://localhost:3000/${product.image}`} alt={product.name} />
                         </div>
                         <h3 className="product-name">{product.name}</h3>
+                        <small className="product-design">{ product.design }</small>
                         <ul className="sizes">
                             <li className="s">S</li>
                             <li className="m">M</li>
                             <li className="l">L</li>
                             <li className="xl">XL</li>
                         </ul>
-                        <p className="price">NGN {product.current_price}</p>
-                        <div className="amount-and-add">
+                        <p className="price">NGN {product.price}</p>
+                        <form className="amount-and-add" onSubmit={AddToCart}>
                             <div className="amount">
-                                <i className="ri-subtract-line decrement"></i>
-                                {/* <input type="number" min="1" value={amount} onChange={e => setAmount(e.target.value)}/> */}
-                                <i className="ri-add-line increment"></i>
+                                <i className="ri-subtract-line decrement" onClick={e => e.target.nextElementSibling.value--}/>
+                                <input type="number" defaultValue="1" />
+                                <i className="ri-add-line increment" onClick={e => e.target.previousElementSibling.value++}/>
                             </div>
-                            <p className="btn">Add to cart</p>
-                        </div>
+                            <input type="submit" value="Add to cart" className="btn" />
+                        </form>
                     </div>
+                : <Prompt message='Product not found' />
             }
             
         </div>

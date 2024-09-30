@@ -7,7 +7,7 @@ function Cart() {
 
     async function getCartItems() {
         try {
-            const request = await fetch('https://timbu-cloud-murex.vercel.app/api/cart');
+            const request = await fetch('https://timbu-cloud-three.vercel.app/api/cart');
             const response = await request.json();
             setCart(response);
         }
@@ -22,14 +22,14 @@ function Cart() {
 
     async function removeFromCart(e) {
         const item = Array.from(e.target.parentElement.parentElement.parentElement.parentElement.childNodes).indexOf(e.target.parentElement.parentElement.parentElement);
-        await fetch(`https://timbu-cloud-murex.vercel.app/api/cart/${item}`, {
+        await fetch(`https://timbu-cloud-three.vercel.app/api/cart/${item}`, {
             method: 'DELETE'
         });
         getCartItems();
     }
 
     async function ClearCart() {
-        await fetch('https://timbu-cloud-murex.vercel.app/api/cart', {
+        await fetch('https://timbu-cloud-three.vercel.app/api/cart', {
             method: 'PUT'
         });
         getCartItems();

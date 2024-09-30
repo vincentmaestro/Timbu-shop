@@ -8,7 +8,7 @@ function Product() {
     const [product, setProduct] = useState();
 
     useEffect(() => {
-        fetch(`https://timbu-cloud-murex.vercel.app/api/wears/${productID}`)
+        fetch(`https://timbu-cloud-three.vercel.app/api/wears/${productID}`)
             .then(response => response.json())
             .then(product => setProduct(product))
             .catch(err => console.error(err.message));
@@ -20,7 +20,7 @@ function Product() {
                 product ?
                     <div className="card">
                         <div className="card-image">
-                            <img src={`https://timbu-cloud-murex.vercel.app/${product.image}`} alt={product.name} />
+                            <img src={`https://timbu-cloud-three.vercel.app/${product.image}`} alt={product.name} />
                         </div>
                         <h3 className="product-name">{product.name}</h3>
                         <small className="product-design">{ product.design }</small>
@@ -40,7 +40,7 @@ function Product() {
                             <input type="submit" value="Add to cart" className="btn" />
                         </form>
                     </div>
-                : <Prompt message='Product not found' />
+                : <Prompt message='Loading...' />
             }
             
         </div>

@@ -6,7 +6,7 @@ function Shop() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://timbu-cloud-murex.vercel.app/api/wears')
+        fetch('https://timbu-cloud-three.vercel.app/api/wears')
             .then(response => response.json())
             .then(products => setProducts(products))
             .catch(err => console.error(err.message));
@@ -20,14 +20,14 @@ function Shop() {
                 <li className="shop-links"><Link>New Arrivals</Link></li>
                 <li className="shop-links"><Link>Offer Deals</Link></li>
             </ul>
-            { !products.length && <p style={{ textAlign: 'center', marginTop: '40%', fontSize: '1.5rem' }}>Loading...</p> }
+            { !products.length && <p style={{ textAlign: 'center', marginTop: '10%', fontSize: '1.5rem' }}>Loading...</p> }
             <div className="shop">
                 {   
                     products && 
                         products.map((product, position) => (
                             <div className="card" key={position}>
                                 <div className="card-image">
-                                    <Link to={`/product/${product.id}`}><img src={`https://timbu-cloud-murex.vercel.app/${product.image}`} alt={product.name} /></Link>
+                                    <Link to={`/product/${product.id}`}><img src={`https://timbu-cloud-three.vercel.app/${product.image}`} alt={product.name} /></Link>
                                 </div>
                                 <h3 className="product-name">{product.name}</h3>
                                 <small className="product-design">{ product.design }</small>

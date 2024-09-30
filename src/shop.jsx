@@ -20,7 +20,7 @@ function Shop() {
                 <li className="shop-links"><Link>New Arrivals</Link></li>
                 <li className="shop-links"><Link>Offer Deals</Link></li>
             </ul>
-            { !products.length && <p style={{ textAlign: 'center', margin: '45% 0', fontSize: '1.5rem' }}>Loading...</p> }
+            { !products.length && <p style={{ textAlign: 'center', marginTop: '40%', fontSize: '1.5rem' }}>Loading...</p> }
             <div className="shop">
                 {   
                     products && 

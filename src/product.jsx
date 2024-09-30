@@ -18,7 +18,7 @@ function Product() {
         <div className="product-page">
             {
                 product ?
-                    <div className="card">
+                    <div className="product-card">
                         <div className="card-image">
                             <img src={`https://timbu-cloud-three.vercel.app/${product.image}`} alt={product.name} />
                         </div>

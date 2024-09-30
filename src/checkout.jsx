@@ -9,7 +9,7 @@ function Checkout() {
     const confetti = new JSConfetti();
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/cart')
+        fetch('https://timbu-cloud-murex.vercel.app/api/cart')
             .then(request => request.json())
             .then(response => setSubTotal(response.subTotal))
             .catch(() => document.querySelector('st').querySelector('span').textContent = 0);
@@ -27,7 +27,7 @@ function Checkout() {
     }
 
     function closeCheckOut() {
-        fetch('http://localhost:3000/api/cart', {
+        fetch('https://timbu-cloud-murex.vercel.app/api/cart', {
             method: 'PUT'
         })
         setDialog(false);

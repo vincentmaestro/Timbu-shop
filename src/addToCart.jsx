@@ -9,7 +9,7 @@ function AddToCart(e) {
     quantity: e.target.querySelector('.amount').querySelector('input').value
   };
   
-  fetch('http://localhost:3000/api/cart', {
+  fetch('https://timbu-cloud-murex.vercel.app/api/cart', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json'},
     body: JSON.stringify(product)

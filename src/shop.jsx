@@ -6,7 +6,7 @@ function Shop() {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/wears')
+        fetch('https://timbu-cloud-murex.vercel.app/api/wears')
             .then(response => response.json())
             .then(products => setProducts(products))
             .catch(err => console.error(err.message));
@@ -27,7 +27,7 @@ function Shop() {
                         products.map((product, position) => (
                             <div className="card" key={position}>
                                 <div className="card-image">
-                                    <Link to={`/product/${product.id}`}><img src={`http://localhost:3000/${product.image}`} alt={product.name} /></Link>
+                                    <Link to={`/product/${product.id}`}><img src={`https://timbu-cloud-murex.vercel.app/${product.image}`} alt={product.name} /></Link>
                                 </div>
                                 <h3 className="product-name">{product.name}</h3>
                                 <small className="product-design">{ product.design }</small>

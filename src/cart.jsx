@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Cart() {
-    const navigate = useNavigate();
     const [cart, setCart] = useState([]);
+    const navigate = useNavigate();
 
     async function getCartItems() {
         try {
@@ -18,7 +18,7 @@ function Cart() {
 
     useEffect(() => {
         getCartItems();
-    }, [cart]);
+    }, []);
 
     async function removeFromCart(e) {
         const item = Array.from(e.target.parentElement.parentElement.parentElement.parentElement.childNodes).indexOf(e.target.parentElement.parentElement.parentElement);

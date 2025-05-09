@@ -20,7 +20,7 @@ function Checkout() {
         const n = setInterval(() => {
             confetti.addConfetti({ confettiNumber: 2500 });
             t++;
-            if(t === 3) {
+            if(t === 2) {
                 clearInterval(n);
             }
         }, 250);

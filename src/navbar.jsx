@@ -40,7 +40,7 @@ function Navbar () {
             <div className="right">
                 <i className="ri-search-line"></i>
                 <Link to="cart"><i className="ri-shopping-cart-2-line"></i></Link>
-                <Link className="signup">Sign up</Link>
+                <Link className="signup">Sign in</Link>
             </div>
         </nav>
     );
